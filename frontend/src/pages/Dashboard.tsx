@@ -13,9 +13,7 @@ export default function Dashboard() {
       <div className="flex flex-col items-center py-10 px-4">
         <h1 className="text-3xl font-bold mb-10 text-center text-gray-800">Dashboard</h1>
 
-        {/* Wrap all sections in a container with consistent width */}
         <div className="w-full max-w-4xl flex flex-col">
-          {/* Each section has full width and consistent styling */}
           <div className="w-full">
             <EditProfile />
           </div>

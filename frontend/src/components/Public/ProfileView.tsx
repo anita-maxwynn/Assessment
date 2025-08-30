@@ -7,7 +7,6 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 export default function ProfileView(): ReactElement {
-  // Removed unused hooks (isAuth, navigate)
   const [profile, setProfile] = useState<Profile | null>(null);
   const [topSkills, setTopSkills] = useState<{ name: string; count: number }[]>([]);
   const [filteredProjects, setFilteredProjects] = useState<any[]>([]);

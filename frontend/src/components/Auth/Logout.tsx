@@ -5,8 +5,8 @@ export default function Logout() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    logout();             // clears tokens from localStorage
-    navigate("/login");   // redirect to login page
+    logout();
+    navigate("/login");
   };
 
   return (

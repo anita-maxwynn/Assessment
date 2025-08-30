@@ -7,7 +7,6 @@ export default function LinkManager() {
   const [type, setType] = useState("GitHub");
   const [url, setUrl] = useState("");
 
-  // Add Resume here
   const linkOptions = ["GitHub", "LinkedIn", "Portfolio", "Twitter", "Resume", "Other"];
 
   const [editingId, setEditingId] = useState<number | null>(null);

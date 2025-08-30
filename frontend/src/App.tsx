@@ -35,7 +35,7 @@ export default function App() {
           }
         />
         <Route path="/logout" element={<LogOut />} />
-        {/* Optional: catch-all redirect */}
+        
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

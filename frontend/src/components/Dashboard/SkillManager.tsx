@@ -5,7 +5,7 @@ import type { Skill } from "../../types/models";
 export default function SkillManager() {
   const [skills, setSkills] = useState<Skill[]>([]);
   const [newSkill, setNewSkill] = useState("");
-  const [newLevel, setNewLevel] = useState("Beginner"); // default value
+  const [newLevel, setNewLevel] = useState("Beginner");
   const levelOptions = ["Beginner", "Intermediate", "Expert"];
 
   useEffect(() => {

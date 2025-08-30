@@ -72,5 +72,4 @@ curl -X POST https://assessment-twyo.onrender.com/token/ -d '{"username": "youru
 - The profileImage is in the media folder of the backend. As I am using the free version of Render, the media files may not be permanently stored.
 - The backend goes to sleep for sometimes. So please wait a bit for it to wake up.
 - The database is hosted on Render. I am using postgresql as in the projects tech_stack I am using array.
-- The Debug is True for now. So you can check the logs for any issues.
 - For the login and update elements, I have given the creadentials on the form.
