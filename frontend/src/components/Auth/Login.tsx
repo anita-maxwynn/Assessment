@@ -8,11 +8,10 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  // Prevent body scroll while on this page
   useEffect(() => {
-    document.body.style.overflow = "hidden"; // disable scroll
+    document.body.style.overflow = "hidden";
     return () => {
-      document.body.style.overflow = ""; // restore scroll when leaving
+      document.body.style.overflow = "";
     };
   }, []);
 
