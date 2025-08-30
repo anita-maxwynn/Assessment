@@ -61,7 +61,7 @@ curl -X POST https://assessment-twyo.onrender.com/token/ -d '{"username": "youru
 ```
 
 ## All Endpoints
-[Assessment API Collection](Assessment_API.postman_collection.json)
+[API Collection](Assessment_API.postman_collection.json)
 
 ## Static & Media
 - Static files served at `/static/`
