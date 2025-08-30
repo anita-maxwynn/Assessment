@@ -26,10 +26,10 @@ SECRET_KEY = 'django-insecure-%^%3q%6d-#sf$ytorjb_yut2l4awh$e(0c2xk=2(+32g3y0blx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["https://assessment-twyo.onrender.com"]
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
-    "https://your-frontend-domain.com",
+    "https://me-api-frontend.vercel.app/"
 ]
 
 load_dotenv()
