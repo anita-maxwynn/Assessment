@@ -1,11 +1,30 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Frontend README
 
-Currently, two official plugins are available:
+## Overview
+React (Vite) frontend for candidate profile playground. Calls backend API to display profile, skills, projects, and supports search/filter.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Setup
+1. `npm install`
+2. `npm run dev`
+
+## Features
+- View profile
+- Search by skill
+- List projects
+- Search across profile data
+
+## API
+- Calls backend endpoints (see main README)
+- Ensure backend CORS is enabled
+
+## Deployment
+- Can be deployed to Vercel, Netlify, etc.
+
+## Sample Request
+```
+GET /profiles/search/?q=python
+```
 
 ## Expanding the ESLint configuration
 

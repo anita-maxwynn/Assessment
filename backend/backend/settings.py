@@ -181,7 +181,7 @@ SIMPLE_JWT = {
     'TOKEN_TYPE_CLAIM': 'type',
 }
 
-# CORS_ALLOWED_ORIGINS = [
-#     "https://your-frontend-domain.com",
-#     "http://localhost:3000",
-# ]
+# settings.py
+CSRF_TRUSTED_ORIGINS = [
+    "https://assessment-twyo.onrender.com",  # your hosted admin URL
+]
