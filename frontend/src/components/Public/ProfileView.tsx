@@ -1,22 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactElement } from "react";
 import { getProfile } from "../../api/profile";
 import axios from "../../api/axios";
 import type { Profile } from "../../types/models";
-import useAuth from "../../hooks/useAuth";
-import { useNavigate } from "react-router-dom";
 import { Linkedin, Github, Twitter, Globe, FileText, SquareAsterisk, ChevronDown, ChevronUp } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-export default function ProfileView() {
-  const isAuth = useAuth();
-  const navigate = useNavigate();
+export default function ProfileView(): ReactElement {
+  // Removed unused hooks (isAuth, navigate)
   const [profile, setProfile] = useState<Profile | null>(null);
   const [topSkills, setTopSkills] = useState<{ name: string; count: number }[]>([]);
   const [filteredProjects, setFilteredProjects] = useState<any[]>([]);
   const [searchResults, setSearchResults] = useState<any[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchOpen, setSearchOpen] = useState(false); // new state for collapsible
+  const [searchOpen, setSearchOpen] = useState(false);
 
   useEffect(() => {
     getProfile().then(setProfile);
@@ -26,14 +23,14 @@ export default function ProfileView() {
   const handleSkillFilter = (skill: string) => {
     axios.get(`/projects/filter_by_skill/?skill=${encodeURIComponent(skill)}`)
       .then(res => setFilteredProjects(res.data));
-    setSearchOpen(true); // auto-open collapsible when filtering
+    setSearchOpen(true);
   };
 
   const handleSearch = () => {
     if (!searchQuery) return;
     axios.get(`/profiles/search/?q=${encodeURIComponent(searchQuery)}`)
       .then(res => setSearchResults(res.data));
-    setSearchOpen(true); // open search panel
+    setSearchOpen(true);
   };
 
   const getIcon = (type: string) => {
@@ -72,6 +69,7 @@ export default function ProfileView() {
 
           {searchOpen && (
             <div className="mt-4 p-4 bg-blue-50 rounded-lg shadow-inner">
+
               {/* Search Input */}
               <div className="flex flex-col md:flex-row gap-2 mb-4 items-center">
                 <input
@@ -111,7 +109,7 @@ export default function ProfileView() {
                     <div key={idx} className="bg-blue-50 rounded-lg p-4 shadow mb-2">
                       <h3 className="font-bold text-blue-800 capitalize">{r.type}</h3>
                       <ul className="list-disc list-inside">
-                        {r.value.map ? (
+                        {Array.isArray(r.value) ? (
                           r.value.map((item: any, i: number) => (
                             <li key={i}>
                               {r.type === "projects" && (
@@ -147,6 +145,7 @@ export default function ProfileView() {
                   </ul>
                 </div>
               )}
+
             </div>
           )}
         </div>
@@ -238,13 +237,13 @@ export default function ProfileView() {
                 <div className="font-bold text-lg text-gray-800 mb-1">{p.title}</div>
                 <p className="text-gray-700 mb-2">{p.description}</p>
                 {p.link && <a href={p.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline text-sm hover:text-blue-700 transition">🔗 Project Link</a>}
-                {p.tech_stack?.length > 0 && (
+                {p.tech_stack?.length ? (
                   <div className="mt-3 flex flex-wrap gap-2">
                     {p.tech_stack.map((tech, idx) => (
                       <span key={idx} className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs font-medium">{tech}</span>
                     ))}
                   </div>
-                )}
+                ) : null}
               </div>
             ))}
           </div>

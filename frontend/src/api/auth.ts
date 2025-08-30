@@ -4,7 +4,7 @@ export async function login(username: string, password: string) {
   const res = await API.post("/token/", { username, password });
   localStorage.setItem("access", res.data.access);
   localStorage.setItem("refresh", res.data.refresh);
-  console.log(res.data);
+  // console.log(res.data);
   return res.data;
 }
 

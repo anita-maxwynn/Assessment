@@ -5,7 +5,7 @@ import Login from "./components/Auth/Login";
 import LogOut from "./components/Auth/Logout";
 import useAuth from "./hooks/useAuth";
 import PublicRoute from "./routes/PublicRoute.tsx";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 
 function ProtectedRoute({ children }: { children: ReactElement }) {
   const isAuth = useAuth(); // make sure useAuth returns boolean
