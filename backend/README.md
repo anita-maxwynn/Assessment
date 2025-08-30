@@ -32,19 +32,17 @@ Endpoints:
 
 ## Database
 Database:
-- PostgreSQL
+- PostgreSQL {cloud hosted in Render}
 - See `schema.md` for schema
-
 
 ## Seeding
 Seeding:
 - I have added my all details through the dashboard in the frontend.
 
-
 ## CORS
 CORS:
 - Ensure CORS is enabled for frontend requests (see `django-cors-headers`)
-- For now i have made them hardcoded but could have been using the env file
+- For now I have made them hardcoded but could have been using the env file
 
 
 ## Deployment
@@ -69,3 +67,10 @@ curl -X POST https://assessment-twyo.onrender.com/token/ -d '{"username": "youru
 
 ## Authentication
 - JWT authentication via `/token/` and `/token/refresh/`
+
+## Remarks
+- The profileImage is in the media folder of the backend. As I am using the free version of Render, the media files may not be permanently stored.
+- The backend goes to sleep for sometimes. So please wait a bit for it to wake up.
+- The database is hosted on Render. I am using postgresql as in the projects tech_stack I am using array.
+- The Debug is True for now. So you can check the logs for any issues.
+- For the login and update elements, I have given the creadentials on the form.

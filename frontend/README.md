@@ -19,14 +19,14 @@ React (Vite) frontend for candidate profile playground. Calls backend API to dis
 - Ensure backend CORS is enabled
 
 ## Deployment
-- Can be deployed to Vercel, Netlify, etc.
+- It is deployed in Vercel
 
-## Sample Request
-```
-GET /profiles/search/?q=python
-```
+## Frontend URL
+- [https://me-api-frontend.vercel.app/](https://me-api-frontend.vercel.app/)
 
-## Expanding the ESLint configuration
+
+
+<!-- ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
@@ -85,4 +85,4 @@ export default tseslint.config([
     },
   },
 ])
-```
+``` -->

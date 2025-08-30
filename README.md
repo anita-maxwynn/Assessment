@@ -1,18 +1,18 @@
 # Assessment Test Playground
 
-This project is a full-stack playground that stores your own profile data and exposes it via a small API and minimal frontend for queries.
+This project is a full-stack playground that stores My own profile data and exposes it via a small API and minimal frontend for queries.
 
 ## Architecture
-- **Backend:** Django REST API (PostgreSQL)
+- **Backend:** Django REST API (Render)
 - **Frontend:** React (Vite)
-- **Database:** PostgreSQL (cloud hosted)
+- **Database:** PostgreSQL (cloud hosted in Render)
 
 ## Setup (Local)
 1. Clone the repo
 2. Set up Python virtualenv and install requirements (`pip install -r backend/requirements.txt`)
 3. Set up `.env` in `backend/` (see sample)
 4. Run migrations (`python manage.py migrate`)
-5. Start backend (`daphne backend.asgi:application`)
+5. Start backend (`daphne -b 0.0.0.0 -p $PORT backend.asgi:application`)
 6. Start frontend (`npm install && npm run dev` in `frontend/`)
 
 ## Setup (Production)
@@ -28,22 +28,26 @@ This project is a full-stack playground that stores your own profile data and ex
 - `/health/` — health check
 
 ## Schema
-See `backend/schema.md` for database schema.
+See [`backend/schema.md`](backend/schema.md) for database schema.
 
 ## Sample Requests
 ```
-curl https://your-backend-url/health/
-curl https://your-backend-url/profiles/search/?q=python
+curl https://assessment-twyo.onrender.com/health/
+curl https://assessment-twyo.onrender.com/profiles/search/?q=python
 ```
 
 ## Known Limitations
-- No pagination, rate-limit, or advanced filtering
+- No pagination, rate-limiting, or caching implemented.
 - Minimal UI
 
 ## Resume
-[Your Resume Link Here]
+[Resume](https://drive.google.com/file/d/1wS9x9Udjjgs98tWE3Ikjj1-2q22IuqX8/view)
 
 ## URLs
 - Backend: https://assessment-twyo.onrender.com
-- Frontend: [your-frontend-url]
-- Repo: [your-github-url]
+- Frontend: https://me-api-frontend.vercel.app/
+- Repo: https://github.com/anita-maxwynn/Assessment
+
+## For more details see these READMEs
+- [Backend README](backend/README.md)
+- [Frontend README](frontend/README.md)
