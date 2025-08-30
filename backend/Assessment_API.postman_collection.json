@@ -1,0 +1,271 @@
+{
+  "info": {
+    "name": "Assessment API Collection",
+    "description": "All CRUD and query endpoints for Assessment backend.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "https://assessment-twyo.onrender.com/health/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["health"] }
+      }
+    },
+    {
+      "name": "Get JWT Token",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": { "mode": "raw", "raw": "{\"username\": \"youruser\", \"password\": \"yourpass\"}" },
+        "url": { "raw": "https://assessment-twyo.onrender.com/token/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["token"] }
+      }
+    },
+    {
+      "name": "Refresh JWT Token",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": { "mode": "raw", "raw": "{\"refresh\": \"<refresh_token>\"}" },
+        "url": { "raw": "https://assessment-twyo.onrender.com/token/refresh/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["token", "refresh"] }
+      }
+    },
+    {
+      "name": "List Profiles",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "https://assessment-twyo.onrender.com/profiles/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["profiles"] }
+      }
+    },
+    {
+      "name": "Create Profile",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}, {"key": "Authorization", "value": "Bearer <access_token>"}],
+        "body": { "mode": "raw", "raw": "{\"name\": \"John Doe\", \"email\": \"john@example.com\", \"bio\": \"Developer\"}" },
+        "url": { "raw": "https://assessment-twyo.onrender.com/profiles/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["profiles"] }
+      }
+    },
+    {
+      "name": "Update Profile",
+      "request": {
+        "method": "PUT",
+        "header": [{"key": "Content-Type", "value": "application/json"}, {"key": "Authorization", "value": "Bearer <access_token>"}],
+        "body": { "mode": "raw", "raw": "{\"name\": \"Jane Doe\"}" },
+        "url": { "raw": "https://assessment-twyo.onrender.com/profiles/1/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["profiles", "1"] }
+      }
+    },
+    {
+      "name": "Delete Profile",
+      "request": {
+        "method": "DELETE",
+        "header": [{"key": "Authorization", "value": "Bearer <access_token>"}],
+        "url": { "raw": "https://assessment-twyo.onrender.com/profiles/1/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["profiles", "1"] }
+      }
+    },
+    {
+      "name": "Search Profiles",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "https://assessment-twyo.onrender.com/profiles/search/?q=python", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["profiles", "search"], "query": [{"key": "q", "value": "python"}] }
+      }
+    },
+    {
+      "name": "List Education",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "https://assessment-twyo.onrender.com/education/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["education"] }
+      }
+    },
+    {
+      "name": "Create Education",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}, {"key": "Authorization", "value": "Bearer <access_token>"}],
+        "body": { "mode": "raw", "raw": "{\"profile\": 1, \"degree\": \"BSc\", \"institution\": \"University\", \"start_year\": 2020}" },
+        "url": { "raw": "https://assessment-twyo.onrender.com/education/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["education"] }
+      }
+    },
+    {
+      "name": "Update Education",
+      "request": {
+        "method": "PUT",
+        "header": [{"key": "Content-Type", "value": "application/json"}, {"key": "Authorization", "value": "Bearer <access_token>"}],
+        "body": { "mode": "raw", "raw": "{\"degree\": \"MSc\"}" },
+        "url": { "raw": "https://assessment-twyo.onrender.com/education/1/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["education", "1"] }
+      }
+    },
+    {
+      "name": "Delete Education",
+      "request": {
+        "method": "DELETE",
+        "header": [{"key": "Authorization", "value": "Bearer <access_token>"}],
+        "url": { "raw": "https://assessment-twyo.onrender.com/education/1/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["education", "1"] }
+      }
+    },
+    {
+      "name": "List Skills",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "https://assessment-twyo.onrender.com/skills/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["skills"] }
+      }
+    },
+    {
+      "name": "Create Skill",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}, {"key": "Authorization", "value": "Bearer <access_token>"}],
+        "body": { "mode": "raw", "raw": "{\"profile\": 1, \"name\": \"Python\", \"level\": \"Expert\"}" },
+        "url": { "raw": "https://assessment-twyo.onrender.com/skills/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["skills"] }
+      }
+    },
+    {
+      "name": "Update Skill",
+      "request": {
+        "method": "PUT",
+        "header": [{"key": "Content-Type", "value": "application/json"}, {"key": "Authorization", "value": "Bearer <access_token>"}],
+        "body": { "mode": "raw", "raw": "{\"level\": \"Intermediate\"}" },
+        "url": { "raw": "https://assessment-twyo.onrender.com/skills/1/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["skills", "1"] }
+      }
+    },
+    {
+      "name": "Delete Skill",
+      "request": {
+        "method": "DELETE",
+        "header": [{"key": "Authorization", "value": "Bearer <access_token>"}],
+        "url": { "raw": "https://assessment-twyo.onrender.com/skills/1/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["skills", "1"] }
+      }
+    },
+    {
+      "name": "Top Skills",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "https://assessment-twyo.onrender.com/skills/top/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["skills", "top"] }
+      }
+    },
+    {
+      "name": "List Projects",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "https://assessment-twyo.onrender.com/projects/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["projects"] }
+      }
+    },
+    {
+      "name": "Create Project",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}, {"key": "Authorization", "value": "Bearer <access_token>"}],
+        "body": { "mode": "raw", "raw": "{\"profile\": 1, \"title\": \"Portfolio\", \"description\": \"My portfolio site\"}" },
+        "url": { "raw": "https://assessment-twyo.onrender.com/projects/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["projects"] }
+      }
+    },
+    {
+      "name": "Update Project",
+      "request": {
+        "method": "PUT",
+        "header": [{"key": "Content-Type", "value": "application/json"}, {"key": "Authorization", "value": "Bearer <access_token>"}],
+        "body": { "mode": "raw", "raw": "{\"title\": \"Portfolio Updated\"}" },
+        "url": { "raw": "https://assessment-twyo.onrender.com/projects/1/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["projects", "1"] }
+      }
+    },
+    {
+      "name": "Delete Project",
+      "request": {
+        "method": "DELETE",
+        "header": [{"key": "Authorization", "value": "Bearer <access_token>"}],
+        "url": { "raw": "https://assessment-twyo.onrender.com/projects/1/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["projects", "1"] }
+      }
+    },
+    {
+      "name": "Filter Projects by Skill",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "https://assessment-twyo.onrender.com/projects/filter_by_skill/?skill=python", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["projects", "filter_by_skill"], "query": [{"key": "skill", "value": "python"}] }
+      }
+    },
+    {
+      "name": "List Work",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "https://assessment-twyo.onrender.com/work/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["work"] }
+      }
+    },
+    {
+      "name": "Create Work",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}, {"key": "Authorization", "value": "Bearer <access_token>"}],
+        "body": { "mode": "raw", "raw": "{\"profile\": 1, \"company\": \"Acme\", \"role\": \"Engineer\", \"start_date\": \"2022-01-01\"}" },
+        "url": { "raw": "https://assessment-twyo.onrender.com/work/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["work"] }
+      }
+    },
+    {
+      "name": "Update Work",
+      "request": {
+        "method": "PUT",
+        "header": [{"key": "Content-Type", "value": "application/json"}, {"key": "Authorization", "value": "Bearer <access_token>"}],
+        "body": { "mode": "raw", "raw": "{\"role\": \"Senior Engineer\"}" },
+        "url": { "raw": "https://assessment-twyo.onrender.com/work/1/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["work", "1"] }
+      }
+    },
+    {
+      "name": "Delete Work",
+      "request": {
+        "method": "DELETE",
+        "header": [{"key": "Authorization", "value": "Bearer <access_token>"}],
+        "url": { "raw": "https://assessment-twyo.onrender.com/work/1/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["work", "1"] }
+      }
+    },
+    {
+      "name": "List Links",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "https://assessment-twyo.onrender.com/links/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["links"] }
+      }
+    },
+    {
+      "name": "Create Link",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}, {"key": "Authorization", "value": "Bearer <access_token>"}],
+        "body": { "mode": "raw", "raw": "{\"profile\": 1, \"type\": \"github\", \"url\": \"https://github.com/youruser\"}" },
+        "url": { "raw": "https://assessment-twyo.onrender.com/links/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["links"] }
+      }
+    },
+    {
+      "name": "Update Link",
+      "request": {
+        "method": "PUT",
+        "header": [{"key": "Content-Type", "value": "application/json"}, {"key": "Authorization", "value": "Bearer <access_token>"}],
+        "body": { "mode": "raw", "raw": "{\"type\": \"linkedin\"}" },
+        "url": { "raw": "https://assessment-twyo.onrender.com/links/1/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["links", "1"] }
+      }
+    },
+    {
+      "name": "Delete Link",
+      "request": {
+        "method": "DELETE",
+        "header": [{"key": "Authorization", "value": "Bearer <access_token>"}],
+        "url": { "raw": "https://assessment-twyo.onrender.com/links/1/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["links", "1"] }
+      }
+    },
+    {
+      "name": "Admin Login",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "https://assessment-twyo.onrender.com/admin/login/?next=/admin/", "protocol": "https", "host": ["assessment-twyo.onrender.com"], "path": ["admin", "login"], "query": [{"key": "next", "value": "/admin/"}] }
+      }
+    }
+  ]
+}
