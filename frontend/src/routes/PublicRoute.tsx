@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 
 export default function PublicRoute({ children }: { children: ReactElement }) {
   const isAuth = useAuth();
