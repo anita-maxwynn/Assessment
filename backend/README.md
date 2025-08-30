@@ -60,6 +60,8 @@ curl https://assessment-twyo.onrender.com/profiles/search/?q=python
 curl -X POST https://assessment-twyo.onrender.com/token/ -d '{"username": "youruser", "password": "yourpass"}'
 ```
 
+## All Endpoints
+[Assessment API Collection](Assessment_API.postman_collection.json)
 
 ## Static & Media
 - Static files served at `/static/`
